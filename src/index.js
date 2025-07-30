@@ -1,11 +1,28 @@
 import "./style.css";
-import { greeting } from "./greeting.js";
+import css from "./css.js";
+import home from "./home.js";
+import menu from "./menu.js";
+import contact from "./contact.js";
+import about from "./about.js";
 
-console.log(greeting);
+document.querySelector('nav').style.height = '5vh';
 
-import odinImage from "./odin.jpg";
+document.querySelector('.home').addEventListener('click', home);
+document.querySelector('.menu').addEventListener('click', menu);
+document.querySelector('.contact').addEventListener('click', contact);
+document.querySelector('.about').addEventListener('click', about);
 
-const image = document.createElement("img");
-image.src = odinImage;
+const content = document.querySelector('#content');
+css(content, {
+    'display': 'flex',
+    'flex-direction': 'row',
+    'justify-content': 'center',
+    'align-items': 'stretch',
 
-document.body.appendChild(image);
+    'width': '100%',
+    'height': '90vh',
+
+    'box-sizing': 'border-box',
+    'font-size': '3vh',
+})
+home();
